@@ -41,3 +41,32 @@ if ( ! function_exists( 'add_action' ) ) {
     echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
     exit;
 }
+
+class NnikkaPlugin 
+{
+    function activate() {
+        // generate a CPT
+        // flush rewrite rules
+    }
+
+    function deactivate() {
+        // flush rewrite rules
+    }
+
+    function uninstall() {
+        // delete CPT
+        // delete all data from DB
+    }
+}
+
+if ( class_exists( 'NnikkaPlugin' ) ) {
+    $nnikkaPlugin = new NnikkaPlugin();
+}
+
+// activation
+register_activation_hook(__FILE__, array( $nnikkaPlugin, 'activate' ));
+
+// deactivation
+register_deactivation_hook(__FILE__, array( $nnikkaPlugin, 'deactivate' ));
+
+// uninstall

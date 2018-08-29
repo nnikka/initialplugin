@@ -30,3 +30,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Copyright 2005-2015 Automattic, Inc.
 */
+
+// if ( ! defined( 'ABSPATH' ) ) {
+//     die;
+// }
+
+// defined( 'ABSPATH' ) or die( 'Hey, you can\t access this file' );
+
+if ( ! function_exists( 'add_action' ) ) {
+    echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
+    exit;
+}
